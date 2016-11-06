@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for NUMBER in `seq -w $3`
+do
+  (rsync -r --inplace -P -e "ssh -p $2" $1.r$NUMBER ; echo Done processing $NUMBER) &
+done
+wait
