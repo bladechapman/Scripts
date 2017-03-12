@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REMOTE_PATH="root@bladeismyna.me:/var/www/html/dropzone/${1}"
+REMOTE_PATH="root@bladeismyna.me:/var/www/personal-site/dropzone/${1}"
 
 if [ $# -eq 0 ]
 then

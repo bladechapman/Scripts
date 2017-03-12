@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ $# -lt 2 ]
+then
+    echo "usage: ygm media_url output_filename"
+else
+    you-get --output-filename __temp__ ${1}
+    ffmpeg -i __temp__ "${2}"
+    rm __temp__
+fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-REMOTE_PATH='root@bladeismyna.me:/var/www/html/dropzone'
+REMOTE_PATH='root@bladeismyna.me:/var/www/personal-site/dropzone'
 
 SCP_COMMAND="scp -r ${1} ${REMOTE_PATH}"
 
