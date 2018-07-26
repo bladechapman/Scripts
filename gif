@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+# quick utility for making a gif from an input movie
+# https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality
+
+PALETTE_NAME="palette_${RANDOM}.png"
+INPUT_FILE="${@:(-2):1}"
+OUTPUT_FILE="${@:(-1):1}"
+
+if [ -z "$INPUT_FILE" ]
+then
+    echo "[USER ERROR] No input file specified. Input file must be second to last parameter"
+    exit
+fi
+
+# generate a gif palette
+ffmpeg -y -i "${INPUT_FILE}"  -vf fps=10,scale=320:-1:flags=lanczos,palettegen "$PALETTE_NAME"
+
+# output the gif using the palette
+ffmpeg -i "${INPUT_FILE}" -i "$PALETTE_NAME" -filter_complex  "fps=24,scale=320:-1:flags=lanczos[x];[x][1:v]paletteuse" ${OUTPUT_FILE:-output.gif}
+
+# clean up the temporary palette
+rm $PALETTE_NAME
