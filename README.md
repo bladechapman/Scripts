@@ -7,7 +7,10 @@ find . -type f -not -path "./README.txt" -maxdepth 1 -execdir ln -s "$(pwd)/{}" 
 Dependencies:
 
 ygm
-    - ffmpeg
-    - you-get
+---
+- ffmpeg
+- you-get
 
-
+gif
+---
+- ffmpeg
