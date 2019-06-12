@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+# Better Touch Tool Configurations
+export BTT_UTILS_PATH=/Users/bladechapman/bettertouchtool/utils
+source $BTT_UTILS_PATH/service-runner.sh
