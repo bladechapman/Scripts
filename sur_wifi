@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 while true; do
-curl -s https://snsr.sunet.stanford.edu/snsr/ipswitch > /dev/null; echo "ping $(date)"
+curl -s https://snsr.sunet.stanford.edu/snsr/sponsoredGuest > /dev/null; echo "ping $(date)"
 sleep 60
 done
